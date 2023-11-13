@@ -3,3 +3,14 @@
 
 #include "CPP_Object.h"
 
+int UCPP_Object::GetOurPrivateInteger()
+{
+	return _ourPrivateIntegerVariable;
+}
+
+void UCPP_Object::SetOurPrivateInteger(int newValue)
+{
+	_ourPrivateIntegerVariable = newValue;
+}
+
+

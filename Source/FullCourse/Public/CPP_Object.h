@@ -17,6 +17,7 @@ private:
 	int _ourPrivateIntegerVariable;
 public:
 	int OurPublicIntegerVariable;
-
+	int GetOurPrivateInteger();
+	void SetOurPrivateInteger(int newValue);
 
 };
