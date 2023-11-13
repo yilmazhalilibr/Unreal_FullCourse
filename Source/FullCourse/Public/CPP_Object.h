@@ -9,15 +9,18 @@
 /**
  *
  */
-UCLASS()
+UCLASS(Blueprintable)
 class FULLCOURSE_API UCPP_Object : public UObject
 {
 	GENERATED_BODY()
 private:
 	int _ourPrivateIntegerVariable;
 public:
-	int OurPublicIntegerVariable;
-	int GetOurPrivateInteger();
-	void SetOurPrivateInteger(int newValue);
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+		int OurPublicIntegerVariable;
+	UFUNCTION(BlueprintPure)
+		int GetOurPrivateInteger();
+	UFUNCTION(BlueprintCallable)
+		void SetOurPrivateInteger(UPARAM(ref)int& newValue);
 
 };
