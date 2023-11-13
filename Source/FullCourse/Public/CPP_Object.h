@@ -7,11 +7,16 @@
 #include "CPP_Object.generated.h"
 
 /**
- * 
+ *
  */
 UCLASS()
 class FULLCOURSE_API UCPP_Object : public UObject
 {
 	GENERATED_BODY()
-	
+private:
+	int _ourPrivateIntegerVariable;
+public:
+	int OurPublicIntegerVariable;
+
+
 };
