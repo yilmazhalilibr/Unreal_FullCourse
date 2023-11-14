@@ -14,12 +14,12 @@ struct FBook
 {
 	GENERATED_USTRUCT_BODY()
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-		FString Name;
+	FString Name;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-		int NumberOfPages;
+	int NumberOfPages;
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-		float Rating;
-	
+	float Rating;
+
 };
 UCLASS(Blueprintable)
 class FULLCOURSE_API UCPP_Object : public UObject
@@ -35,5 +35,5 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetOurPrivateInteger(UPARAM(ref)int& newValue);
 	UFUNCTION(BlueprintCallable)
-	static void Test(UPARAM(ref)FBook& Target);
+	static void Test(UPARAM(ref)FBook& Target, UObject* Context);
 };
