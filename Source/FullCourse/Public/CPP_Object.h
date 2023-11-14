@@ -9,6 +9,14 @@
 /**
  *
  */
+UENUM(BlueprintType)
+enum FruitList
+{
+	Apple UMETA(DisplayName = "Apple"),
+	Mango UMETA(DisplayName = "Mango"),
+	Banana UMETA(DisplayName = "Banana")
+};
+
 USTRUCT(BlueprintType)
 struct FBook
 {
