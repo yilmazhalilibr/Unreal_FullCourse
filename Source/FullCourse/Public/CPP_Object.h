@@ -9,6 +9,18 @@
 /**
  *
  */
+USTRUCT(BlueprintType)
+struct FBook
+{
+	GENERATED_USTRUCT_BODY()
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+		FString Name;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+		int NumberOfPages;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+		float Rating;
+	
+};
 UCLASS(Blueprintable)
 class FULLCOURSE_API UCPP_Object : public UObject
 {
@@ -17,10 +29,11 @@ private:
 	int _ourPrivateIntegerVariable;
 public:
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
-		int OurPublicIntegerVariable;
+	int OurPublicIntegerVariable;
 	UFUNCTION(BlueprintPure)
-		int GetOurPrivateInteger();
+	int GetOurPrivateInteger();
 	UFUNCTION(BlueprintCallable)
-		void SetOurPrivateInteger(UPARAM(ref)int& newValue);
-
+	void SetOurPrivateInteger(UPARAM(ref)int& newValue);
+	UFUNCTION(BlueprintCallable)
+	static void Test(UPARAM(ref)FBook& Target);
 };
