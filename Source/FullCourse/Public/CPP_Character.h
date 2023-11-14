@@ -29,4 +29,8 @@ public:
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 	UFUNCTION(BlueprintCallable)
 	void RemovePickUp();
+	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	void TestBPFunc(int x);
+
+
 };

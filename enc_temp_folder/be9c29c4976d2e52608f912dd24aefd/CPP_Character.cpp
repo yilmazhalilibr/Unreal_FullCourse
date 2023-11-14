@@ -16,7 +16,7 @@ ACPP_Character::ACPP_Character()
 void ACPP_Character::BeginPlay()
 {
 	Super::BeginPlay();
-	TestBPFunc(100);
+
 }
 
 // Called every frame
@@ -51,5 +51,4 @@ void ACPP_Character::RemovePickUp()
 	}
 
 }
-
 
