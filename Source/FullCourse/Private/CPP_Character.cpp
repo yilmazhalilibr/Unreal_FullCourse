@@ -2,6 +2,7 @@
 
 
 #include "CPP_Character.h"
+#include <MyInterface.h>
 
 // Sets default values
 ACPP_Character::ACPP_Character()
@@ -42,10 +43,10 @@ void ACPP_Character::RemovePickUp()
 	UKismetSystemLibrary::LineTraceSingle(this, cameraLocation, end, ETraceTypeQuery::TraceTypeQuery1, 0, Ignore, EDrawDebugTrace::ForDuration, Hit, true);
 	if (Hit.GetActor())
 	{
-		if (Cast<ACPP_Pickup>(Hit.GetActor()))
+		if (Cast<IMyInterface>(Hit.GetActor()))
 		{
-			Hit.GetActor()->Destroy();
-			UKismetSystemLibrary::PrintString(this, "Destroyed a the pickup");
+			auto tempActor = Cast<IMyInterface>(Hit.GetActor());
+			tempActor->Destruct();
 		}
 	}
 

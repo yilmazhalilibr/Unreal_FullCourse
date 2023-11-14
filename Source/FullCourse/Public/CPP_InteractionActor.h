@@ -5,25 +5,24 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
 #include "MyInterface.h"
-#include "CPP_Pickup.generated.h"
+#include "Kismet/KismetSystemLibrary.h"
+#include "CPP_InteractionActor.generated.h"
 
 UCLASS()
-class FULLCOURSE_API ACPP_Pickup : public AActor , public IMyInterface
+class FULLCOURSE_API ACPP_InteractionActor : public AActor, public IMyInterface
 {
 	GENERATED_BODY()
-	
-public:	
+
+public:
 	// Sets default values for this actor's properties
-	ACPP_Pickup();
+	ACPP_InteractionActor();
 
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	virtual void Destruct() override;
-
-
 };
