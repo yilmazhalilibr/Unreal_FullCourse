@@ -31,6 +31,6 @@ public:
 	void RemovePickUp();
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void TestBPFunc(int x);
-
-
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void TestBPNativeFunc_Implementation(float x);
 };
