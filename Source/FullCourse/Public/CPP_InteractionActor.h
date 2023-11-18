@@ -25,4 +25,6 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 	virtual void Destruct() override;
+	UPROPERTY()
+	int SomeVariable;
 };

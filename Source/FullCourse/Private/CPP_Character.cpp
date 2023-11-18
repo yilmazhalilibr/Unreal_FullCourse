@@ -17,32 +17,41 @@ ACPP_Character::ACPP_Character()
 void ACPP_Character::BeginPlay()
 {
 	Super::BeginPlay();
+
+	if (ActorToSpawn)
+	{
+		auto temp = GetWorld()->SpawnActor<ACPP_InteractionActor>(ActorToSpawn);
+		auto temp1 = GetWorld()->SpawnActorDeferred<ACPP_InteractionActor>(ActorToSpawn, FTransform());
+		temp->SomeVariable = 100;
+		temp1->FinishSpawning(FTransform());
+	}
+
+
+
+
+
+
+
 	//TestBPFunc(100);
-	OurIntArray.Reserve(8);
+	/*OurIntArray.Reserve(8);
 	OurIntArray.Add(24);
 	OurIntArray.Emplace(4);
 	OurIntArray.Remove(342);
 	OurIntArray.RemoveAt(0);
-
-
 	OurMap.Add("Pi", 3.14);
 	OurMap.Add("Num1", 42.525);
-
-	UKismetSystemLibrary::PrintString(this, FString::SanitizeFloat(OurMap["Num1"]));
-
-
+	UKismetSystemLibrary::PrintString(this, FString::SanitizeFloat(OurMap["Num1"]));*/
 	//for (int i = 0; i < OurIntArray.Num(); ++i)
 	//{
 	//	UKismetSystemLibrary::PrintString(this, FString::SanitizeFloat(OurIntArray[i]));
 	//}
-
-	for (auto& ele : OurMap)
-	{
-		FString temp = ele.Key;
-		temp.Append(" : ");
-		temp.Append(FString::SanitizeFloat(ele.Value));
-		UKismetSystemLibrary::PrintString(this, temp);
-	}
+	//for (auto& ele : OurMap)
+	//{
+	//	FString temp = ele.Key;
+	//	temp.Append(" : ");
+	//	temp.Append(FString::SanitizeFloat(ele.Value));
+	//	UKismetSystemLibrary::PrintString(this, temp);
+	//}
 
 
 }
