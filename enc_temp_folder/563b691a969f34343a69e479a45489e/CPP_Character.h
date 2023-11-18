@@ -6,7 +6,6 @@
 #include "GameFramework/Character.h"
 #include "Kismet/GameplayStatics.h"
 #include "Kismet/KismetSystemLibrary.h"
-#include "GameFramework/CharacterMovementComponent.h"
 #include "CPP_Pickup.h"
 #include "CPP_InteractionActor.h"
 #include "CPP_Character.generated.h"

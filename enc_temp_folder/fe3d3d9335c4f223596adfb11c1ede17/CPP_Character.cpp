@@ -25,8 +25,11 @@ void ACPP_Character::BeginPlay()
 		temp->SomeVariable = 100;
 		temp1->FinishSpawning(FTransform());
 	}
-	auto temp = GetCharacterMovement();
-	temp->SetMovementMode(EMovementMode::MOVE_Flying, 0);
+
+
+
+
+
 
 
 	//TestBPFunc(100);
