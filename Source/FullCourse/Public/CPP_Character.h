@@ -35,6 +35,8 @@ public:
 
 	UPROPERTY(BlueprintReadWrite, EditAnywhere)
 	TArray<int> OurIntArray;
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	TMap<FString, float> OurMap;
 
 
 

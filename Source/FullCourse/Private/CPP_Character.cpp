@@ -24,10 +24,26 @@ void ACPP_Character::BeginPlay()
 	OurIntArray.Remove(342);
 	OurIntArray.RemoveAt(0);
 
-	for (int i = 0; i < OurIntArray.Num(); ++i)
+
+	OurMap.Add("Pi", 3.14);
+	OurMap.Add("Num1", 42.525);
+
+	UKismetSystemLibrary::PrintString(this, FString::SanitizeFloat(OurMap["Num1"]));
+
+
+	//for (int i = 0; i < OurIntArray.Num(); ++i)
+	//{
+	//	UKismetSystemLibrary::PrintString(this, FString::SanitizeFloat(OurIntArray[i]));
+	//}
+
+	for (auto& ele : OurMap)
 	{
-		UKismetSystemLibrary::PrintString(this, FString::SanitizeFloat(OurIntArray[i]));
+		FString temp = ele.Key;
+		temp.Append(" : ");
+		temp.Append(FString::SanitizeFloat(ele.Value));
+		UKismetSystemLibrary::PrintString(this, temp);
 	}
+
 
 }
 
