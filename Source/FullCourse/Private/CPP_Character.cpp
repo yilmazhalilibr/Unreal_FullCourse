@@ -9,6 +9,7 @@ ACPP_Character::ACPP_Character()
 {
 	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	OurIntArray = { 12,144,255,342,53,2 };
 
 }
 
@@ -16,7 +17,18 @@ ACPP_Character::ACPP_Character()
 void ACPP_Character::BeginPlay()
 {
 	Super::BeginPlay();
-	TestBPFunc(100);
+	//TestBPFunc(100);
+	OurIntArray.Reserve(8);
+	OurIntArray.Add(24);
+	OurIntArray.Emplace(4);
+	OurIntArray.Remove(342);
+	OurIntArray.RemoveAt(0);
+
+	for (int i = 0; i < OurIntArray.Num(); ++i)
+	{
+		UKismetSystemLibrary::PrintString(this, FString::SanitizeFloat(OurIntArray[i]));
+	}
+
 }
 
 // Called every frame
@@ -33,28 +45,28 @@ void ACPP_Character::SetupPlayerInputComponent(UInputComponent* PlayerInputCompo
 
 }
 
-void ACPP_Character::RemovePickUp()
-{
-	auto temp = UGameplayStatics::GetPlayerCameraManager(this, 0);
-	auto cameraLocation = temp->GetCameraLocation();
-	auto end = temp->GetCameraLocation() + (temp->GetActorForwardVector() * 50000);
-	TArray<AActor*> Ignore;
-	FHitResult Hit;
-	UKismetSystemLibrary::LineTraceSingle(this, cameraLocation, end, ETraceTypeQuery::TraceTypeQuery1, 0, Ignore, EDrawDebugTrace::ForDuration, Hit, true);
-	if (Hit.GetActor())
-	{
-		if (Cast<IMyInterface>(Hit.GetActor()))
-		{
-			auto tempActor = Cast<IMyInterface>(Hit.GetActor());
-			tempActor->Destruct();
-		}
-	}
+//void ACPP_Character::RemovePickUp()
+//{
+//	auto temp = UGameplayStatics::GetPlayerCameraManager(this, 0);
+//	auto cameraLocation = temp->GetCameraLocation();
+//	auto end = temp->GetCameraLocation() + (temp->GetActorForwardVector() * 50000);
+//	TArray<AActor*> Ignore;
+//	FHitResult Hit;
+//	UKismetSystemLibrary::LineTraceSingle(this, cameraLocation, end, ETraceTypeQuery::TraceTypeQuery1, 0, Ignore, EDrawDebugTrace::ForDuration, Hit, true);
+//	if (Hit.GetActor())
+//	{
+//		if (Cast<IMyInterface>(Hit.GetActor()))
+//		{
+//			auto tempActor = Cast<IMyInterface>(Hit.GetActor());
+//			tempActor->Destruct();
+//		}
+//	}
+//
+//}
 
-}
-
-void ACPP_Character::TestBPNativeFunc_Implementation(float x)
-{
-	UKismetSystemLibrary::PrintString(this, "C++ implementation called");
-}
+//void ACPP_Character::TestBPNativeFunc_Implementation(float x)
+//{
+//	UKismetSystemLibrary::PrintString(this, "C++ implementation called");
+//}
 
 

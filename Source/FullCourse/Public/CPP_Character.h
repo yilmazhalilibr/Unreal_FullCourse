@@ -27,10 +27,17 @@ public:
 
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
-	UFUNCTION(BlueprintCallable)
-	void RemovePickUp();
-	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
-	void TestBPFunc(int x);
-	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
-	void TestBPNativeFunc_Implementation(float x);
+	//UFUNCTION(BlueprintCallable)
+	//void RemovePickUp();
+	//UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
+	//void TestBPFunc(int x);
+	//void TestBPNativeFunc_Implementation(float x);
+
+	UPROPERTY(BlueprintReadWrite, EditAnywhere)
+	TArray<int> OurIntArray;
+
+
+
+
+
 };
