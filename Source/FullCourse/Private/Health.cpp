@@ -30,7 +30,7 @@ void UHealth::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponen
 }
 void UHealth::IncreasesHealth(float health)
 {
-	Health -= health;
+	Health += health;
 
 	if (Health <= 0)
 	{
@@ -41,7 +41,7 @@ void UHealth::IncreasesHealth(float health)
 
 void UHealth::DowngradesHealth(float health)
 {
-	Health += health;
+	Health -= health;
 }
 
 float UHealth::GetHealth()
