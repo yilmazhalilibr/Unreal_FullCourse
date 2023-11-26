@@ -10,8 +10,9 @@ ACPP_ExampleEnemy::ACPP_ExampleEnemy()
 	HealthComponent = CreateDefaultSubobject<UHealth>(TEXT("Health Component"));
 	SkeletalMeshComponent = CreateDefaultSubobject<USkeletalMeshComponent >(TEXT("Skeletal Mesh"));
 	CapsuleComponent = CreateDefaultSubobject<UCapsuleComponent>(TEXT("Capsule Component to Collider"));
+	ArrowComponent = CreateDefaultSubobject<UArrowComponent>(TEXT("Arrow Component"));
 
-	RootComponent = SkeletalMeshComponent;
+	RootComponent = CapsuleComponent;
 }
 
 void ACPP_ExampleEnemy::BeginPlay()
@@ -43,6 +44,3 @@ void ACPP_ExampleEnemy::ColliderTrigger(UPrimitiveComponent* HitComponent, AActo
 
 }
 
-void ACPP_ExampleEnemy::TestMethod()
-{
-}

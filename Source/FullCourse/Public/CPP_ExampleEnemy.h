@@ -7,6 +7,7 @@
 #include <Health.h>
 #include <Components/CapsuleComponent.h>
 #include "Engine/Engine.h"
+#include <Components/ArrowComponent.h>
 #include "CPP_ExampleEnemy.generated.h"
 
 UCLASS(BlueprintType)
@@ -21,7 +22,8 @@ public:
 	USkeletalMeshComponent* SkeletalMeshComponent;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Collision")
 	UCapsuleComponent* CapsuleComponent;
-
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Arrow")
+	UArrowComponent* ArrowComponent;
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Health")
 	UHealth* HealthComponent;
@@ -31,8 +33,6 @@ public:
 
 	void DestroyThisActor();
 	void ColliderTrigger(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
-
-	void TestMethod();
 
 
 protected:

@@ -44,5 +44,15 @@ void UHealth::DowngradesHealth(float health)
 	Health += health;
 }
 
+float UHealth::GetHealth()
+{
+	return Health;
+}
+
+void UHealth::SetHealth(float newHealth)
+{
+	Health = newHealth;
+}
+
 
 
