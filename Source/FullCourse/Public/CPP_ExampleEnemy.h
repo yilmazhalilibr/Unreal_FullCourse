@@ -9,7 +9,7 @@
 #include "Engine/Engine.h"
 #include "CPP_ExampleEnemy.generated.h"
 
-UCLASS()
+UCLASS(BlueprintType)
 class FULLCOURSE_API ACPP_ExampleEnemy : public AActor
 {
 	GENERATED_BODY()
@@ -31,6 +31,10 @@ public:
 
 	void DestroyThisActor();
 	void ColliderTrigger(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, FVector NormalImpulse, const FHitResult& Hit);
+
+	void TestMethod();
+
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

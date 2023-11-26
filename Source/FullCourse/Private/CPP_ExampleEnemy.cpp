@@ -42,3 +42,7 @@ void ACPP_ExampleEnemy::ColliderTrigger(UPrimitiveComponent* HitComponent, AActo
 	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Triggered!"), false, FVector2D::UnitVector);
 
 }
+
+void ACPP_ExampleEnemy::TestMethod()
+{
+}
